@@ -14,3 +14,15 @@ resource "aws_vpc" "myvpc" {
         Name = "${var.vpcname}"
     }
 }
+
+variable "inputname" {
+    type = string
+    description = "Put the name of the vpc"
+}
+
+resource "aws-vpc" "myvpc" {
+    tags = {
+       Name = var.inputname     
+    }
+}
+
